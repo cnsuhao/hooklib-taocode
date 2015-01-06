@@ -1,0 +1,14 @@
+x64 函数调用
+http://blog.sina.com.cn/s/blog_6f6769b50100uhzz.html
+
+MOV [RSP+8h],RCX
+  MOV [RSP+10h],RDX
+  MOV [RSP+18h],R8
+  MOV [RSP+20h],R9
+  PUSH RBP
+  MOV RBP,RSP
+
+    而在返回时会有如下代码：
+  LEA RSP,[RBP]
+  POP RBP
+  RET
